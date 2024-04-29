@@ -1,0 +1,10 @@
+# Description: This is the main playbook to setup the server.
+# Author: ste
+# Date: 2024-04-06
+# start with:
+# `ansible-playbook -i hosts setup_plex.yml --ask-become-pass`
+
+
+# - import_playbook: ./playbooks/remove_snap.yml
+# - import_playbook: ./playbooks/install_preq.yml
+- import_playbook: ./playbooks/nextcloud_prepare.yml

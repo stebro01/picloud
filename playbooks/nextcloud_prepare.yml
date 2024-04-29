@@ -1,0 +1,21 @@
+# ansible-playbook -i ../hosts nextcloud_prepare.yml --ask-become-pass
+
+---
+- name: Prepare system for Nextcloud installation
+  hosts: all
+  vars:
+    nextcloud_dir: "./nextcloud"
+  become: yes
+  tasks:
+
+    - name: Create directories for Nextcloud
+      file:
+        path: "{{ nextcloud_dir }}/{{ item }}"
+        state: directory
+      with_items:
+        - ""
+        - "nextcloud"
+        - "apps"
+        - "config"
+        - "data"
+        - "mariadb"

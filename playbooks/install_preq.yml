@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  
+  tasks:
+
+    - name: Pakete aktualisieren
+      apt:
+        update_cache: yes
+      become: yes
+
+
+    - name: Installiere notwendige Pakete
+      apt:
+        name:
+          - docker.io
+          # - git
+          # - nodejs
+          # - npm
+          - docker-compose
+        state: latest
