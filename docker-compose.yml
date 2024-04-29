@@ -8,7 +8,7 @@ services:
     ports:
       - 9022:3306
     volumes:
-      - /media/server/nextcloud/mariadb:/var/lib/mysql
+      - ./data/mariadb:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=mypw2024
       - MYSQL_DATABASE=nextcloud
@@ -34,10 +34,10 @@ services:
     links:
       - mariadb:mysql
     volumes:
-      - /media/server/nextcloud/nextcloud:/var/www/html 
-      - /media/server/nextcloud/apps:/var/www/html/custom_apps 
-      - /media/server/nextcloud/config:/var/www/html/config 
-      - /media/server/nextcloud/data:/var/www/html/data 
+      - ./data/nextcloud:/var/www/html 
+      - ./data/apps:/var/www/html/custom_apps 
+      - ./data/config:/var/www/html/config 
+      - ./data/data:/var/www/html/data 
     environment:
       - MYSQL_PASSWORD=mypw2024
       - MYSQL_DATABASE=nextcloud
