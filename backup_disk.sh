@@ -13,7 +13,7 @@ TO=/media/mediabackup
 
 # REAL RUN
 #rsync -av --delete --exclude '.Spotlight*' $FROM/ $TO/
-# rsync -av --exclude '.Spotlight*' $FROM/PiCloud $TO/nextcloud
+rsync -av --exclude '.Spotlight*' $FROM/PiCloud $TO/nextcloud
 
 # Hinzufügen einer Datei, die das Datum und die Uhrzeit des Backups enthält
 echo "Backup durchgeführt am $(date)" > $TO/backup_timestamp_nextcloud.txt

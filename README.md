@@ -26,8 +26,22 @@ z.B.: myadminsb
 
 ## Einige Scripts
 
-### Anzahl der Nutzer anzeigen
+### Nextcloud occ
+
+Starten von OCC
 ```
 docker exec --user www-data piplex_nextcloud php occ
 ```
 
+### OCC Nutzer anzeigen
+
+Nutzer anzeigen
+```
+docker exec --user www-data piplex_nextcloud php occ user:list
+```
+
+### OCC Files scanen
+
+```
+docker exec --user www-data piplex_nextcloud php occ files:scan --all
+```
